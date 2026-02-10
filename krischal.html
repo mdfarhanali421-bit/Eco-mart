@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Page title shown on browser tab -->
+    <title>Profile | Team Leader</title>
+
+    <!-- Makes the page responsive on all devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        /* Reset default browser spacing and apply common font */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Page background color */
+        body {
+            background: #f4f6f8;
+        }
+
+        /* Main profile card container */
+        .profile-container {
+            max-width: 700px;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header section alignment */
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Profile image styling */
+        .header img {
+            width: 140px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Common section spacing */
+        .section {
+            margin-top: 20px;
+        }
+
+        /* Section headings styling */
+        .section h3 {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            color: #f2eeee;
+        }
+
+        /* Paragraphs and list items text styling */
+        .section p,
+        li {
+            font-size: 14px;
+            color: #f6f3f3;
+            margin-bottom: 6px;
+        }
+
+        /* Back button styling */
+        .back {
+            display: inline-block;
+            margin-top: 20px;
+            background: #010d06;
+            color: white;
+            padding: 10px 18px;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Main profile container -->
+    <div class="profile-container">
+
+        <!-- Header section with name and contact details -->
+        <div class="header" style="color: white;">
+            <!-- Name fetched dynamically from URL -->
+            <h2 id="name"></h2>
+
+            <!-- Static name display -->
+            <h2>KRISCHAL GHIMIRE</h2>
+
+            <!-- Contact information -->
+            <p><strong>Contact</strong></p>
+            <p>Kathmandu, Nepal</p>
+            <p>📞 +977 9803645415</p>
+            <p>krischal10002@gmail.com</p>
+        </div>
+
+        <!-- Skills section -->
+        <div class="section">
+            <h3>Skills & Abilities</h3>
+            <ul>
+                <li><strong>Software Tools:</strong> Excel, Word, PowerPoint, Visual Studio Code, Blender, IntelliJ
+                    IDEA, Notion, Anaconda Navigator</li>
+                <li><strong>Communication:</strong> Nepali, English</li>
+            </ul>
+        </div>
+
+        <!-- Experience section -->
+        <div class="section">
+            <h3>Experience</h3>
+
+            <p><strong>2023–2024 | Temporary Teacher</strong></p>
+            <p>Ratna Rajya Secondary School, Mid Baneshwor, Kathmandu</p>
+            <p>
+                Conducted classes on different subjects as instructed by administration.
+                Organized extra-curricular activities and guided students on creative learning.
+            </p>
+
+            <p><strong>2025 (Jan–Feb) | Internship</strong></p>
+            <p>Job Kunja, New Baneshwor, Kathmandu</p>
+            <p>
+                Data entry, basic programming, customer guidance, research and reporting tasks.
+            </p>
+        </div>
+
+        <!-- Education section -->
+        <div class="section">
+            <h3>Education</h3>
+
+            <p><strong>2013–2023</strong></p>
+            <p>Basic & Secondary Education (Class 1–10)</p>
+            <p>Occidental Public School, Anamnagar, Kathmandu</p>
+
+            <p><strong>2023–2025</strong></p>
+            <p>A-Levels</p>
+            <p>Rato Bangala School</p>
+
+            <p><strong>2025–20XX</strong></p>
+            <p>BSc (Hons) Computing with Artificial Intelligence</p>
+            <p>Islington College</p>
+        </div>
+
+        <!-- Communication skills section -->
+        <div class="section">
+            <h3>Communication</h3>
+            <p>
+                Strong written and verbal communication skills with a polite and professional approach.
+            </p>
+        </div>
+
+        <!-- References section -->
+        <div class="section">
+            <h3>References</h3>
+
+            <p>Deo Bahadur Niroula – Occidental Public School</p>
+            <p>📧 info@ops.edu.np | ☎️ 01-4102790, 01-4102946</p>
+
+            <p>Rojala Shrestha – Rato Bangala School</p>
+            <p>📧 rojala@ratobangala.edu.np | ☎️ +977 9841282808</p>
+        </div>
+
+        <!-- Back navigation button -->
+        <a href="./aboutUs.html" class="back">← Go Back</a>
+
+    </div>
+
+    <script>
+        // Get URL parameters (e.g., ?name=John)
+        const params = new URLSearchParams(window.location.search);
+
+        // Display the name from URL in the heading
+        document.getElementById("name").innerText = params.get("name");
+    </script>
+
+</body>
+
+</html>

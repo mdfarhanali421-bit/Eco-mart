@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character encoding for proper text rendering -->
+    <meta charset="UTF-8">
+
+    <!-- Makes the page responsive on all devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title shown in browser tab -->
+    <title>Home Page</title>
+
+    <!-- Global stylesheet -->
+    <link rel="stylesheet" href="../CSS/style.css">
+
+</head>
+
+<style>
+        /* ================= FEEDBACK FORM CONTAINER ================= */
+    .feedback-container {
+        display: flex;
+        justify-content: center;
+        padding: 60px 20px;
+        background-color: #fcfcfc;
+    }
+
+    /* Feedback card styling */
+    .feedback-card {
+        background: #fff;
+        padding: 40px 35px;
+        /* nice even padding */
+        border: 2px solid #000;
+        max-width: 700px;
+        width: 100%;
+        text-align: center;
+        border-radius: 12px;
+        /* smooth card edges */
+    }
+
+    /* Form group spacing */
+    .form {
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    /* Label styling */
+    .form label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: bold;
+    }
+
+    /* Input fields (First & Last name) */
+    .form input[type="text"] {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid #000;
+        border-radius: 10px;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+
+    /* Textarea styling */
+    textarea {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #000;
+        border-radius: 12px;
+        font-family: sans-serif;
+        resize: none;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+
+    /* ================= SUBMIT BUTTON ================= */
+    /* Button styling with hover effect */
+    .submit-btn {
+        width: 100%;
+        /* Full-width button */
+        background: #000;
+        /* Black background */
+        color: #fff;
+        /* White text */
+        padding: 12px;
+        /* Button padding */
+        border: none;
+        /* Removes default border */
+        font-family: 'Oswald', sans-serif;
+        font-size: 1.1rem;
+        /* Button text size */
+        cursor: pointer;
+        /* Pointer cursor on hover */
+        border-radius: 4px;
+        /* Slightly rounded corners */
+        transition: all 0.3s;
+        /* Smooth hover animation */
+    }
+
+    /* Hover effect for submit button */
+    .submit-btn:hover {
+        background: #333;
+        /* Darker background on hover */
+        border-radius: 20px;
+        /* Pill-shaped effect */
+    }
+
+    /* ================= PORTFOLIO CONTAINER ================= */
+    /* Main wrapper for team portfolio */
+    .portfolio-container {
+        max-width: 1200px;
+        /* Limits container width */
+        margin: auto;
+        /* Centers container */
+        padding: 12px;
+        /* Inner spacing */
+    }
+
+    /* ================= TEAM CARD ================= */
+    /* Styling for team member boxes */
+    .team-box {
+        display: flex;
+        /* Aligns text and image side-by-side */
+        justify-content: space-between;
+        /* Spaces content evenly */
+        align-items: center;
+        /* Vertically centers items */
+        background: white;
+        /* White background */
+        padding: 20px 25px;
+        /* Inner spacing */
+        margin-bottom: 40px;
+        /* Space between cards */
+        border-radius: 20px;
+        /* Rounded corners */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        /* Soft shadow */
+        cursor: pointer;
+        /* Pointer on hover */
+        transition: 0.3s;
+        /* Smooth animation */
+        gap: 10px;
+        /* Space between text and image */
+    }
+
+    /* Hover effect for team cards */
+    .team-box:hover {
+        transform: scale(1.02);
+        /* Slight zoom effect */
+    }
+
+    /* Team information container */
+    .team-info {
+        flex: 2;
+        /* Gives more space to text */
+        min-width: 0;
+        /* Prevents text overflow */
+    }
+
+    /* Team member name */
+    .team-info h2 {
+        margin-bottom: 5px;
+        /* Space below name */
+        white-space: nowrap;
+        /* Keeps name on one line */
+        font-size: 1.8rem;
+        /* Name font size */
+        color: #fcfcfc;
+        /* color for the text */
+    }
+
+    /* Role text styling */
+    .role {
+        font-weight: bold;
+        /* Bold text */
+        color: #e43b21;
+        /* Highlight color */
+        margin-bottom: 15px;
+        /* Space below role */
+    }
+
+    /* Description text */
+    .description {
+        color: #f7f4f4;
+        /* Light text color */
+        line-height: 1.5;
+        /* Improves readability */
+        font-size: 0.95rem;
+        /* Slightly smaller text */
+    }
+
+    /* Team image styling */
+    .team-box img {
+        flex: 1;
+        /* Smaller space for image */
+        max-width: 250px;
+        /* Limits image width */
+        height: auto;
+        /* Maintains aspect ratio */
+        border-radius: 10px;
+        /* Rounded image corners */
+    }
+
+    /* Leader card highlight */
+    .leader {
+        border-left: 5px solid #e92424;
+        /* Red border for leader */
+    }
+
+    /* Member card highlight */
+    .member {
+        border-left: 5px solid #ecf403;
+        /* Yellow border for members */
+    }
+
+    /* Image container */
+    .team-img-container {
+        position: relative;
+        /* Allows layering if needed */
+    }
+
+    /* Image blending and styling */
+    .team-img-container img {
+        width: 100%;
+        /* Full width image */
+        height: 350px;
+        /* Fixed height */
+        display: block;
+        /* Removes extra spacing */
+        object-fit: cover;
+        /* Crops image properly */
+        opacity: 1;
+        /* Full visibility */
+        filter: grayscale(10%);
+        /* Slight grayscale effect */
+        mix-blend-mode: luminosity;
+        /* Blends image with background */
+    }
+</style>
+<body>
+
+    <!-- ================= INTERNAL CSS STYLES ================= -->
+    <!-- Styles for feedback form and input fields -->
+    <style>
+        .details {
+            width: 100%;
+            margin-bottom: 5px;
+            font-family: sans-serif;
+            font-size: 20px;
+        }
+
+        input {
+            padding: 5px;
+        }
+
+        radio {
+            padding: 5px;
+        }
+
+        ::placeholder {
+            font-size: 15px;
+        }
+        /* Iternal CSS specifically for the hero section background */
+        .hero-section {
+            height: 100vh;
+            /* Full screen height */
+            background-image: url(../Images/aboutUsHero.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* Ensures image covers the section */
+            position: relative;
+        }
+    </style>
+
+    <!-- ================= HEADER SECTION ================= -->
+    <header>
+
+        <!-- Top bar with logo, brand name, and shop link -->
+        <div class="top-bar">
+            <div class="brand-container">
+                <!-- Website logo -->
+                <img src="../Images/EcoMartLogo.png" alt="Eco Mart Logo" class="logo-img">
+            </div>
+
+            <!-- Brand name linking to homepage -->
+            <h1 class="brand-name">
+                <a href="../../homePage.html" style="color: rgb(33, 120, 74);">EARTH BASKET</a>
+            </h1>
+
+            <!-- Shop navigation link -->
+            <div class="top-nav-link">
+                <a href="ourProducts.html" style="color: rgb(33, 120, 74);">SHOP</a>
+            </div>
+        </div>
+
+        <!-- Navigation menu -->
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../../homePage.html"><b><i>Home</i></b></a></li>
+                <li><a href="ourProducts.html"><b><i>Products</i></b></a></li>
+                <li><a href="blog.html"><b><i>Blog</i></b></a></li>
+                <li><a href="research.html"><b><i>Research</i></b></a></li>
+                <li><a href="aboutUs.html" class="active"><b><i>About us</i></b></a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    
+
+    <section class="hero-section"></section>
+    <br>
+    <h1 style="color: #2a0492; text-align: center;">Our Team and their portfolio</h1>
+    <p style="color: rgb(5, 26, 118); font-size: large; text-align: center;"><b >Please click the portfolio's card to open CV!</b></p>
+    <!-- ================= TEAM PORTFOLIO SECTION ================= -->
+    <div class="portfolio-container">
+
+        <!-- TEAM LEADER CARD -->
+        <div class="team-box leader" onclick="location.href='krischal.html'"
+            style="background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);">
+
+            <div class="team-info">
+                <h2>Krischal Ghimire</h2>
+                <p class="role">Team Leader</p>
+                <p class="description">
+                    Krischal is the team leader of our team and he focused on making user-centric design, leading the project.
+                    He also helped other team members to finish their assigned work. He created home page, product page and research page of our website. <br>
+                    
+                </p>
+            </div>
+
+            <!-- Team leader image -->
+            <div class="team-img-container">
+                <img src="../Images/KrischalPhoto.png" alt="Krischal Ghimire">
+            </div>
+        </div>
+
+        <!-- TEAM MEMBER 1 -->
+        <div class="team-box member" onclick="location.href='Farhan.html'"
+            style="background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(122,186,73,1) 18.2%, rgba(0,124,187,1) 78.1%);">
+
+            <div class="team-info">
+                <h2>MD Farhan Ali</h2>
+                <p class="role">Member</p>
+                <p class="description">
+                    Farhan is an enthusiastic member of our team who is a keen learner. He has made about us page for the website.
+                    Along with that he has also searched images for our product page.
+                </p>
+            </div>
+
+            <div class="team-img-container">
+                <img src="../Images/FarhanPhoto.png" alt="Farhan">
+            </div>
+        </div>
+
+        <!-- TEAM MEMBER 2 -->
+        <div class="team-box member" onclick="location.href='Shreyas.html'"
+            style="background: linear-gradient(135deg, #667eea, #764ba2);">
+
+            <div class="team-info">
+                <h2>Shreyas Shreshtha</h2>
+                <p class="role">Member</p>
+                <p class="description">
+                    Shreyas is also one of our core member who does his work excellently and with pure dedication.He has developed 
+                    our blog page and made sure or blog section was attractive for our veiwers to learn about us. 
+                </p>
+            </div>
+
+            <div class="team-img-container">
+                <img src="../Images/ShreyasPhoto.webp" alt="Shreyas">
+            </div>
+        </div>
+
+        <!-- ================= FEEDBACK FORM SECTION ================= -->
+        <div class="feedback-container">
+            <div class="feedback-card">
+                <h2>WE VALUE YOUR FEEDBACK</h2>
+                <!-- Feedback submission form -->
+                <form id="feedbackForm" class="details" onsubmit="validateForm()">
+                
+                    <!-- First Name -->
+                    <div class="form">
+                        <label for="firstname"><b>First name:</b></label>
+                        <input type="text" id="firstname" name="firstname">
+                    </div>
+                
+                    <!-- Last Name -->
+                    <div class="form">
+                        <label for="lastname"><b>Last name:</b></label>
+                        <input type="text" id="lastname" name="lastname">
+                    </div>
+
+                    <!-- Email Address -->
+                    <div class="form">
+                        <label for="emailAddress"><b>Email Address:</b></label>
+                        <input type="text" id="emailaddress" name="emailaddress">
+                    </div>
+                
+                    <!-- Gender -->
+                    <div class="form">
+                        <label><b>Gender:</b></label>
+                        <input type="radio" name="gender" value="male" checked> Male
+                        <input type="radio" name="gender" value="female"> Female
+                    </div>
+                
+                    <!-- Message -->
+                    <div class="form">
+                        <label for="message"><b><!-- Feedback question -->
+                        <p>How much do you enjoy our products and services?</p></b></label>
+                        <textarea name="message" id="message" placeholder="Tell us more about your experience..." rows="4"></textarea>
+                    </div>
+                
+                    <button type="submit" class="submit-btn">SUBMIT FEEDBACK</button>
+                
+                </form>
+
+
+                <!-- Success message shown after submission -->
+                <div id="successMessage" class="hidden">
+                    <h3>Thank you for your feedback!</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= FOOTER SECTION ================= -->
+    <footer class="footer-container">
+        <table class="footer-links">
+            <tr>
+                <td>
+                    <h3>Our Timings</h3>
+                    <ul>
+                        <li>Monday-Friday: From 8 Am to 5 Pm</li>
+                        <li>Saturday-Sunday: From 8 Am to 12 Pm</li>
+                    </ul>
+                </td>
+                <td>
+                    <h3>Our locations</h3>
+                    <ul>
+                        <li>Kamal Pokhari, Kathmandu</li>
+                        <li>Old Baneshwor, Kathmandu</li>
+                    </ul>
+                </td>
+                <td>
+                    <h3>About our designs</h3>
+                    <ul>
+                        <li><a href="research.html">Websites</a></li>
+                    </ul>
+                </td>
+                <td>
+                    <h3>LEARN MORE</h3>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="aboutUs.html">About Us</a></li>
+                    </ul>
+                </td>
+                <td>
+                    <h3>Questions?</h3>
+                    <p style="color: rgb(7, 7, 7);">Call us if you like to know about our products and services!</p>
+
+                    <!-- Social media icons -->
+                    <table class="small-image-table">
+                        <td class="small-img-wrapper"><img src="../Images/Insta.jpg" alt=""></td>
+                        <td class="small-img-wrapper"><img src="../Images/email.jpg" alt=""></td>
+                        <td class="small-img-wrapper"><img src="../Images/call.png" alt=""></td>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <!-- Copyright -->
+        <p style="color: rgb(7, 7, 7);"><b><i>&copy; All Rights Reserved To EARTH-BASKET</i></b></p>
+    </footer>
+    <script src="../JavaScript/Script.js"></script>
+</body>
+
+</html>

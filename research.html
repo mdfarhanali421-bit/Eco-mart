@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Defines character encoding for the webpage -->
+    <meta charset="UTF-8">
+
+    <!-- Ensures the website is responsive on all devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title shown on the browser tab -->
+    <title>Home Page</title>
+
+    <!-- Main/common CSS file -->
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<style>
+        /* =============================== */
+    /* Feature Section Layout Styling */
+    /* =============================== */
+
+    /* Main layout to place image and text side by side */
+    .feature-layout {
+        display: flex;
+        /* Aligns image and text horizontally */
+        align-items: center;
+        /* Vertically centers content */
+        justify-content: center;
+        /* Centers layout within page */
+        max-width: 1200px;
+        margin: 50px auto;
+        /* Centers section and adds spacing */
+        padding: 20px;
+        gap: 40px;
+        /* Space between image and text */
+    }
+
+    /* Hero section with background image */
+    .hero-section {
+        height: 100vh;
+        background-image: url(../Images/ResearchHero.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        /* Ensures background image fills section */
+        background-position: center;
+        position: relative;
+    }
+
+    /* Wrapper for image section */
+    .image-wrapper {
+        flex: 1;
+        /* Equal width for image section */
+        max-width: 500px;
+        /* Prevents image from becoming too large */
+    }
+
+    /* Image styling inside image wrapper */
+    .image-wrapper img {
+        width: 100%;
+        height: auto;
+        /* Maintains aspect ratio */
+        display: block;
+        border-radius: 20px;
+        /* Rounded rectangular corners */
+        border: 1px solid #ddd;
+        /* Subtle border for definition */
+    }
+
+    /* Wrapper for text content */
+    .text-wrapper {
+        flex: 1;
+        /* Equal width for text section */
+        text-align: left;
+    }
+
+    /* Heading styling inside text section */
+    .text-wrapper h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    /* Paragraph styling inside text section */
+    .text-wrapper p {
+        font-size: 1rem;
+        color: #555;
+        /* Soft gray for readability */
+        margin-bottom: 20px;
+    }
+
+    /* Button styling */
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        border: 1px solid #000;
+        text-decoration: none;
+        /* Removes underline */
+        color: #000;
+        background-color: #4d9756;
+        /* Eco-friendly green color */
+    }
+</style>
+<body>
+
+    <!-- ================= HEADER SECTION ================= -->
+    <header>
+
+        <!-- Top bar containing logo, brand name, and shop link -->
+        <div class="top-bar">
+            <div class="brand-container">
+                <!-- Website logo -->
+                <img src="../Images/EcoMartLogo.png" alt="Eco Mart Logo" class="logo-img">
+            </div>
+
+            <!-- Brand name linking to homepage -->
+            <h1 class="brand-name">
+                <a href="../../homePage.html" style="color: rgb(33, 120, 74);">EARTH BASKET</a>
+            </h1>
+
+            <!-- Shop link -->
+            <div class="top-nav-link">
+                <a href="ourProducts.html" style="color: rgb(33, 120, 74);">SHOP</a>
+            </div>
+        </div>
+
+        <!-- Navigation menu -->
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../../homePage.html"><b><i>Home</i></b></a></li>
+                <li><a href="ourProducts.html"><b><i>Products</i></b></a></li>
+                <li><a href="blog.html"><b><i>Blog</i></b></a></li>
+                <!-- Active page: Research -->
+                <li><a href="research.html" class="active"><b><i>Research</i></b></a></li>
+                <li><a href="aboutUs.html"><b><i>About us</i></b></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <br>
+
+    <!-- ================= HERO SECTION ================= -->
+    <!-- Used for banner or background styling -->
+    <section class="hero-section"></section>
+
+    <!-- ================= FEATURE SECTION 1 ================= -->
+    <!-- Image display feature inspired by JSTOR website -->
+    <section class="feature-layout">
+
+        <!-- Image container -->
+        <div class="image-wrapper">
+            <img src="../Images/sliderSS.jpeg" alt="image slider" class="main-image">
+        </div>
+
+        <!-- Image container -->
+        <div class="image-wrapper">
+            <img src="../Images/imageSlider2.png" alt="image slider" class="main-image">
+        </div>
+
+        <!-- Text description -->
+        <div class="text-wrapper">
+            <h1>Our Website Image display</h1>
+            <hr class="divider">
+            <p>
+                We added image display in our home page to add its beauty and let our customer know different aspects of our website. We
+                added this component after viewing it in the "soilboy" website and it really catched our eye. We added extra description
+                to our images in the image displayer. Though the original website has shop now button which we lack it in our website though. If
+                you would like to visit the referenced site please click the "Visit the website"link below.
+            </p>
+
+            <!-- External reference link -->
+            <a href="https://www.soilboy.sg/" class="btn">Visit the Website</a>
+        </div>
+    </section>
+
+    <!-- ================= FEATURE SECTION 2 ================= -->
+    <!-- Website design inspiration -->
+    <section class="feature-layout">
+
+        <!-- Text description -->
+        <div class="text-wrapper">
+            <h1>Our Website's design and style</h1>
+            <hr class="divider">
+            <p>
+                We choosed our website design and style after visiting this this websie. It catched our eye because it was so clean and
+                attractive than other webpages and we though it would be a great foundation for our webpage. We edited the navigation
+                bar with more option which is missing in the original website. If you would like to visit the referenced site please
+                click the "Visit the website"link below.
+            </p>
+
+            <!-- External reference link -->
+            <a href="https://www.blackstarpastry.com" class="btn">Visit the Website</a>
+        </div>
+
+        <!-- Image container -->
+        <div class="image-wrapper">
+            <img src="../Images/blackstar.png" alt="website design reference" class="main-image">
+        </div>
+
+        <!-- Image container -->
+        <div class="image-wrapper">
+            <img src="../Images/styleSS.png" alt="website design reference" class="main-image">
+        </div>
+    </section>
+
+    <!-- ================= FEATURE SECTION 3 ================= -->
+    <!-- Product display and add-to-cart inspiration -->
+    <section class="feature-layout">
+
+        <!-- Image container -->
+        <div class="image-wrapper">
+            <img src="../Images/designSS.jpeg" alt="add to cart design" class="main-image">
+        </div>
+        <!-- Image container -->
+        <div class="image-wrapper">
+            <img src="../Images/Addtocart.png" alt="add to cart design" class="main-image">
+        </div>
+
+        <!-- Text description -->
+        <div class="text-wrapper">
+            <h1>Our Add to cart and product's info</h1>
+            <hr class="divider">
+            <p>
+                We designed our products description box from the following website as it is easy to desingn than in other websites. We
+                added the add to cart option because it made the the webpage more realistic and good. We added extra description
+                component to our product container. If you would like to visit the referenced site please click the "Visit the
+                website"link below.
+            </p>
+
+            <!-- External reference link -->
+            <a href="https://www.kathmanduorganics.com/?srsltid=AfmBOooGRUB2Dh1fl1a_oucilVefskSwFs6rOlaq9NCy7zuUZ1iGTkcd"
+                class="btn">Visit the Website</a>
+        </div>
+    </section>
+
+    <!-- ================= FEATURE SECTION 4 ================= -->
+    <!-- Website Blog Sectiom -->
+    <section class="feature-layout">
+    
+        <!-- Text description -->
+        <div class="text-wrapper">
+            <h1>Our Website's blog section design</h1>
+            <hr class="divider">
+            <p>
+                We choosed our website blog section format from this website's design info
+                because it is so much professional than other websites. It has "keep reading" button which we lack
+                in our website but we have wrote the side topics in points than in pragraph which is more easy to read than the 
+                original website. If you would like to visit the referenced
+                site please
+                click the "Visit the website"link below.
+            </p>
+    
+            <!-- External reference link -->
+            <a href="https://dribbble.com/shots/26106849-Blog-Page-iPullRank" class="btn">Visit the Website</a>
+        </div>
+    
+        <!-- Image container -->
+        <div class="image-wrapper">
+            <img src="../Images/blogIns.png" alt="website design reference" class="main-image">
+        </div>
+    
+        <!-- Image container -->
+        <div class="image-wrapper">
+            <img src="../Images/blogSS.jpeg" alt="website design reference" class="main-image">
+        </div>
+    </section>
+
+        <!-- ================= FEATURE SECTION 5 ================= -->
+        <!-- Product display and add-to-cart inspiration -->
+        <section class="feature-layout">
+        
+            <!-- Image container -->
+            <div class="image-wrapper">
+                <img src="../Images/footerSS.png" alt="add to cart design" class="main-image">
+            </div>
+            <!-- Image container -->
+            <div class="image-wrapper">
+                <img src="../Images/footerInspo.png" alt="add to cart design" class="main-image">
+            </div>
+        
+            <!-- Text description -->
+            <div class="text-wrapper">
+                <h1>Our Footer Inspiration</h1>
+                <hr class="divider">
+                <p>
+                    We designed our footer from this webpage because its easy to make and has so many information than in other
+                    websites. We
+                    added the footer because it make the website more realistic and also provide bunch of information about the mart
+                    . We have made the footer more clean than in the orignal website. If you would like to visit the referenced site please click the "Visit
+                    the
+                    website"link below.
+                </p>
+        
+                <!-- External reference link -->
+                <a href="https://www.dropps.com/"
+                    class="btn">Visit the Website</a>
+            </div>
+        </section>
+
+    <!-- ================= FOOTER SECTION ================= -->
+    <footer class="footer-container">
+
+        <!-- Footer links and information -->
+        <table class="footer-links">
+            <tr>
+
+                <!-- Business hours -->
+                <td>
+                    <h3>Our Timings</h3>
+                    <ul>
+                        <li>Monday-Friday: From 8 Am to 5 Pm</li>
+                        <li>Saturday-Sunday: From 8 Am to 12 Pm</li>
+                    </ul>
+                </td>
+
+                <!-- Store locations -->
+                <td>
+                    <h3>Our locations</h3>
+                    <ul>
+                        <li>Kamal Pokhari, Kathmandu</li>
+                        <li>Old Baneshwor, Kathmandu</li>
+                    </ul>
+                </td>
+
+                <!-- Design reference page -->
+                <td>
+                    <h3>About our designs</h3>
+                    <ul>
+                        <li><a href="research.html">Websites</a></li>
+                    </ul>
+                </td>
+
+                <!-- Learning links -->
+                <td>
+                    <h3>LEARN MORE</h3>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="aboutUs.html">About Us</a></li>
+                    </ul>
+                </td>
+
+                <!-- Contact and social icons -->
+                <td>
+                    <h3>Questions?</h3>
+                    <p style="color: rgb(7, 7, 7);">Call us if you like to know about our products and services!</p>
+
+                    <table class="small-image-table">
+                        <td class="small-img-wrapper"><img src="../Images/Insta.jpg" alt="Instagram"></td>
+                        <td class="small-img-wrapper"><img src="../Images/email.jpg" alt="Email"></td>
+                        <td class="small-img-wrapper"><img src="../Images/call.png" alt="Call"></td>
+                    </table>
+                </td>
+
+            </tr>
+        </table>
+
+        <!-- Copyright notice -->
+        <p style="color: rgb(7, 7, 7);"><b><i>&copy; All Rights Reserved To EARTH-BASKET</i></b></p>
+    </footer>
+
+</body>
+
+</html>
