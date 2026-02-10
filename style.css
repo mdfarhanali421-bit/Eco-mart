@@ -1,0 +1,262 @@
+/* ===================== */
+/* General Reset Styles */
+/* ===================== */
+
+/* Removes default margin and padding and ensures consistent box sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic body styling */
+body {
+    font-family: 'Oswald', sans-serif;
+    color: #000;
+    line-height: 1.4;
+}
+
+/* ===================== */
+/* Header & Navigation */
+/* ===================== */
+
+/* Header container styling */
+header {
+    padding: 10px 0;
+    border-bottom: none;
+}
+
+/* Top bar layout for logo, brand name, and navigation link */
+.top-bar {
+    display: flex;
+    justify-content: center;
+    /* Centers brand container */
+    align-items: center;
+    /* Vertically aligns items */
+    position: relative;
+    /* Enables absolute positioning */
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 80px;
+    color: #000;
+}
+
+/* Container to align logo and brand name side by side */
+.brand-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* Space between logo and text */
+}
+
+/* Logo image styling */
+.logo-img {
+    height: 40px;
+    /* Matches brand name height */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Brand name (EcoMart) styling */
+.brand-name {
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #2f6b3f;
+    /* Eco-friendly green color */
+    text-transform: uppercase;
+    text-align: center;
+    margin: 20px 0;
+
+    /* Soft shadow for a fresh and premium look */
+    text-shadow:
+        1px 1px 2px rgba(0, 0, 0, 0.1),
+        0 0 10px rgba(47, 107, 63, 0.3);
+}
+
+/* Positions the SHOP link on the right side of the top bar */
+.top-nav-link {
+    position: absolute;
+    right: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Main navigation bar styling */
+.main-nav {
+    padding: 15px 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Styling for active navigation item */
+.active {
+    background-color: #66a16c;
+    border-radius: 8px;
+    padding: 5px 10px;
+}
+
+/* Navigation list layout */
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 80px;
+}
+
+/* Removes underline from all links */
+a {
+    text-decoration: none;
+}
+
+/* Active star icon color */
+.active-star {
+    color: #000;
+}
+
+/* ===================== */
+/* Navigation Link Styles */
+/* ===================== */
+
+/* Styles for list item links */
+li a {
+    display: block;
+    /* Makes entire area clickable */
+    color: rgb(10, 10, 10);
+    text-align: center;
+    padding: 14px 16px;
+    transition: all 1s ease;
+    /* Smooth hover animation */
+}
+
+/* Hover effect for navigation links */
+li a:hover {
+    background-color: #66a16c;
+    border-radius: 8px;
+    padding: 5px 10px;
+}
+
+/* ===================== */
+/* Footer Section */
+/* ===================== */
+
+/* Footer main container */
+footer {
+    margin-top: 50px;
+    border-top: 1px solid #ccc;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Footer title styling */
+.footer-title {
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto 20px;
+    padding: 0 20px;
+}
+
+/* Footer navigation section */
+.footer-nav {
+    border-top: 1px solid #000;
+    padding-top: 20px;
+}
+
+/* Footer navigation list */
+.footer-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 40px;
+}
+
+/* Footer navigation links */
+.footer-nav a {
+    color: #000;
+    font-weight: bold;
+}
+
+/* Footer background container */
+.footer-container {
+    background-color: #ccc;
+    color: #ffffff;
+    padding: 60px 40px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* ===================== */
+/* Footer Table Layout */
+/* ===================== */
+
+/* Table layout for footer links */
+.footer-links {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+}
+
+/* Footer table cell styling */
+.footer-links td {
+    vertical-align: top;
+    padding-right: 20px;
+}
+
+/* Footer headings */
+footer h3 {
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    color: #224ac1;
+    font-weight: 700;
+}
+
+/* Footer list reset */
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Footer list items */
+footer ul li {
+    margin-bottom: 12px;
+    color: rgb(7, 7, 7);
+}
+
+/* Footer list links */
+footer ul li a {
+    color: rgb(7, 7, 7);
+    font-size: 15px;
+}
+
+/* ===================== */
+/* Small Image Gallery */
+/* ===================== */
+
+/* Table for small images */
+.small-image-table {
+    border-collapse: separate;
+    border-spacing: 10px;
+    /* Space between images */
+    margin: 20px 0;
+}
+
+/* Wrapper for small images */
+.small-img-wrapper {
+    width: 60px;
+    height: 45px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    /* Clips image to border radius */
+    background-color: #ccc;
+}
+
+/* Small image styling */
+.small-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Crops image neatly */
+    display: block;
+}

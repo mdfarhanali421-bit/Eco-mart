@@ -1,0 +1,256 @@
+/* ================= INFO SECTION ================= */
+/* Layout for text and image side by side */
+.info-section {
+    display: flex;
+    /* Uses flexbox layout */
+    justify-content: space-between;
+    /* Space between text and image */
+    align-items: flex-start;
+    /* Aligns items to the top */
+    max-width: 1200px;
+    /* Limits section width */
+    margin: 10px auto;
+    /* Centers section horizontally */
+    padding: 20px;
+    /* Inner spacing */
+    gap: 50px;
+    /* Space between text and image */
+}
+
+/* ================= TEXT SIDE ================= */
+/* Left-side text container */
+.text-side {
+    flex: 1;
+    /* Takes up half of the space */
+}
+
+/* Paragraph styling inside text side */
+.text-side p {
+    font-size: 0.95rem;
+    /* Slightly smaller text */
+    font-style: italic;
+    /* Italic font style */
+    font-family: 'Georgia', serif;
+    /* Serif font for professional look */
+    max-width: 600px;
+    /* Limits paragraph width */
+    color: #444;
+    /* Soft dark color */
+    line-height: 3.0;
+    /* Large spacing between lines */
+    margin-bottom: 20px;
+    /* Space between paragraphs */
+}
+
+/* ================= IMAGE SIDE ================= */
+/* Right-side image container */
+.image-side {
+    flex: 1;
+    /* Takes up half of the space */
+    flex-shrink: 0;
+    /* Prevents image shrinking */
+    display: flex;
+    /* Enables flex alignment */
+    justify-content: flex-end;
+    /* Aligns image to the right */
+}
+
+/* Curved image styling */
+.curved-image {
+    width: 600px;
+    /* Image width */
+    height: 300px;
+    /* Image height */
+    max-width: 600px;
+    /* Prevents oversized image */
+    aspect-ratio: 1 / 1;
+    /* Keeps square proportion */
+    object-fit: cover;
+    /* Prevents image stretching */
+    border-radius: 40px;
+    /* Rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    /* Soft shadow effect */
+}
+
+/* ================= CONTENT SECTION ================= */
+/* Main content container */
+.content-container {
+    max-width: 1200px;
+    /* Limits content width */
+    margin: 40px auto;
+    /* Centers container */
+    text-align: center;
+    /* Centers text */
+    padding: 0 20px;
+    /* Horizontal padding */
+}
+
+/* Section heading */
+.section-title {
+    margin-bottom: 40px;
+    /* Space below title */
+    font-size: 2rem;
+    /* Large heading size */
+}
+
+/* ================= ICON ================= */
+.icon {
+    display: flex;
+    /* Enables flexbox */
+    flex-wrap: wrap;
+    /* Allows wrapping into rows */
+    justify-content: center;
+    /* Centers items horizontally */
+    gap: 40px;
+    /* Space between items */
+}
+
+/* Individual icon item */
+.icon-item {
+    display: flex;
+    /* Flex layout */
+    flex-direction: column;
+    /* Stack items vertically */
+    align-items: center;
+    /* Center content */
+    width: calc(50% - 40px);
+    /* Two items per row */
+}
+
+/* ================= SQUARE BOX ================= */
+/* Container for image and description */
+.square-box {
+    width: 100%;
+    /* Full width of column */
+    max-width: 500px;
+    /* Limits max width */
+    border: 3px solid #000;
+    /* Thick black border */
+    background-color: #fff;
+    /* White background */
+    padding: 20px;
+    /* Inner spacing */
+    border-radius: 15px;
+    /* Rounded corners */
+    transition: 0.3s;
+    /* Smooth hover effect */
+    display: flex;
+    /* Flex layout */
+    flex-direction: column;
+    /* Vertical layout */
+    align-items: center;
+    /* Center content */
+    gap: 15px;
+    /* Space between elements */
+}
+
+/* Image inside square box */
+.square-box img {
+    width: 100%;
+    /* Full width image */
+    height: 250px;
+    /* Fixed height */
+    object-fit: cover;
+    /* Maintains aspect ratio */
+    display: block;
+    /* Removes default spacing */
+    border-radius: 10px;
+    /* Rounded image corners */
+}
+
+/* Hover effect for square box */
+.square-box:hover {
+    border-color: #959ea7;
+    /* Changes border color */
+    transform: translateY(-5px);
+    /* Moves box upward */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    /* Adds shadow */
+}
+
+/* ================= TYPOGRAPHY ================= */
+/* item title */
+.item span {
+    font-weight: bold;
+    /* Bold text */
+    font-size: 1.4rem;
+    /* Larger title */
+    margin-top: 15px;
+    /* Space above */
+    display: block;
+    /* Block display */
+    color: #333;
+    /* Dark text color */
+}
+
+/* Description text */
+.box-description {
+    font-size: 0.95rem;
+    /* Medium text size */
+    color: #666;
+    /* Gray text color */
+    line-height: 1.5;
+    /* Readable line spacing */
+    margin-top: 10px;
+    /* Space above text */
+}
+
+/* ================= PAGE LAYOUT ================= */
+/* Container for page layout with image and text */
+.page-container {
+    display: flex;
+    /* Flex layout */
+    align-items: center;
+    /* Vertical alignment */
+    gap: 50px;
+    /* Space between elements */
+    max-width: 1200px;
+    /* Limits width */
+    width: 90%;
+    /* Responsive width */
+    padding: 40px 0;
+    /* Vertical padding */
+}
+
+/* Image column styling */
+.image-column {
+    flex: 1;
+    /* Takes equal space */
+    flex-shrink: 0;
+    /* Prevents shrinking */
+    display: flex;
+    /* Flex layout */
+    justify-content: flex-end;
+    /* Aligns image to right */
+}
+
+/* ================= HERO SECTION ================= */
+/* Full-screen hero banner */
+.hero-section {
+    height: 100vh;
+    /* Full viewport height */
+    background-image: url(../Images/HomePageSlider1.jpg);
+    /* Background image */
+    background-repeat: no-repeat;
+    /* Prevents repeating */
+    background-size: cover;
+    /* Covers entire section */
+    position: relative;
+    /* Allows overlay positioning */
+}
+
+.image-container {
+    width: 400px;
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease-in-out;
+}
