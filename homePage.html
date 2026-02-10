@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character encoding for proper text display -->
+    <meta charset="UTF-8">
+
+    <!-- Responsive design for different screen sizes -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title shown on browser tab -->
+    <title>Home Page</title>
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="Assets/CSS/style.css">
+
+    <!-- Homepage-specific stylesheet -->
+    <link rel="stylesheet" href="Assets/CSS/HomePageCSS.css">
+
+    
+</head>
+
+<body>
+    
+
+    <!-- ================= HEADER SECTION ================= -->
+    <header>
+
+        <!-- Top bar containing logo, brand name, and shop link -->
+        <div class="top-bar">
+            <div class="brand-container">
+                <!-- Website logo -->
+                <img src="Assets/Images/EcoMartLogo.png" alt="Eco Mart Logo" class="logo-img">
+            </div>
+
+            <!-- Brand name with homepage link -->
+            <h1 class="brand-name">
+                <a href="homePage.html" style="color: rgb(33, 120, 74);">EARTH BASKET</a>
+            </h1>
+
+            <!-- Shop link -->
+            <div class="top-nav-link" style="color: rgb(33, 120, 74);">
+                <a href="Assets/Html code/ourProducts.html">SHOP</a>
+            </div>
+        </div>
+
+        <!-- Navigation menu -->
+        <nav class="main-nav">
+            <ul>
+                <li><a href="homePage.html" class="active"><b><i>Home</i></b></a></li>
+                <li><a href="Assets/Html code/ourProducts.html"><b><i>Products</i></b></a></li>
+                <li><a href="Assets/Html code/blog.html"><b><i>Blog</i></b></a></li>
+                <li><a href="Assets/Html code/research.html"><b><i>Research</i></b></a></li>
+                <li><a href="Assets/Html code/aboutUs.html"><b><i>About us</i></b></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ================= HERO SECTION ================= -->
+    <!-- This section is typically used for banners or background images -->
+    <section class="hero-section">
+    </section>
+
+    <!-- Line breaks for spacing -->
+    <br><br><br><br>
+
+    <!-- ================= INFORMATION SECTION ================= -->
+    <section class="info-section">
+
+        <!-- Text content explaining eco-friendly products -->
+        <div class="text-side">
+            <h2>Why Use Eco-friendly Products?</h2>
+            <p>
+                Using eco-friendly products helps protect the environment by reducing pollution,
+                conserving natural resources, and minimizing harmful chemicals. These products are made using
+                sustainable materials and processes that produce less pollution and waste,helping to conserve natural resources
+                such as water,soil, and energy. By choosing eco-friendly alternatives, we can reduce the amount if toxic chemicals 
+                released into the environment, which help keep the air and water clean and protect wildlife and ecosystems. 
+            </p>
+        </div>
+
+        <!-- Image related to eco-friendly lifestyle -->
+        <div class="image-side">
+                <img id="slider" src="Assets/Images/New.jpg" alt="Image Slider">
+        </div>
+    </section>
+
+    <!-- ================= MAIN CONTENT SECTION ================= -->
+    <main class="content-container">
+
+        <!-- Section heading -->
+        <h2 class="section-title">Know More About Us</h2>
+
+        <!-- Subheading describing eco-friendly behaviors -->
+        <h2 style="color: rgb(36, 146, 36); font-family: 'Franklin Gothic Medium', Arial, sans-serif;">
+            We follow following key behaviours in our eco-mart to make it as much as nature friendly as possible!
+        </h2>
+
+        <br>
+
+        <!-- Grid layout for eco-friendly practices -->
+        <div class="icon">
+
+            <!-- Recycling techniques -->
+            <div class="icon-item ">
+                <div class="square-box">
+                    <span>Our Recycle techniques</span>
+                    <img src="Assets/Images/decompose.jpg" alt="">
+                    <p class="box-description">
+                        Implementing comprehensive recycling and composting programs for operational and food waste. Donating surplus edible
+                        food to food banks or charities. Designing products for durability, repair, and recycling, and offering take-back or
+                        repair programs to extend product life cycles.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Water conservation practices -->
+            <div class="icon-item ">
+                <div class="square-box">
+                    <span>Water Conservation</span>
+                    <img src="Assets/Images/WaterConservation.jpg" alt="">
+                    <p class="box-description">
+                        Installing water-efficient fixtures and exploring systems like rainwater harvesting for landscaping or greywater
+                        recycling. Train staff on the importance of water conservation and display signs or information to encourage customers
+                        to be mindful of their water usage, both in-store and at home.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Eco-friendly packaging -->
+            <div class="icon-item ">
+                <div class="square-box">
+                    <span>Minimal and Eco-Conscious Packaging</span>
+                    <img src="Assets/Images/Packaging.jpg" alt="">
+                    <p class="box-description">
+                        Using packaging that is recyclable, biodegradable, or compostable, and minimizing excess material. Encouraging customers
+                        to use their own reusable bags or containers, especially for bulk items.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Energy efficiency initiatives -->
+            <div class="icon-item ">
+                <div class="square-box">
+                    <span>Energy Efficiency and Renewable Energy</span>
+                    <img src="Assets/Images/Renewable.jpg" alt="">
+                    <p class="box-description">
+                        Utilizing energy-efficient systems for lighting (e.g., LED), heating, ventilation, and air conditioning (HVAC).
+                        Investing in renewable energy sources like solar panels for power.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <!-- Importing JavaScript -->
+    <script>const images = [
+            "Assets/Images/New.jpg",
+            "Assets/Images/elephant.jpg",
+            "Assets/Images/nature.jpg",
+            "Assets/Images/Design Wave.jpg"
+        ];
+
+        let index = 0;
+        const slider = document.getElementById("slider");
+
+        setInterval(() => {
+            index = (index + 1) % images.length;
+            slider.src = images[index];
+        }, 5000); // changes every 5 seconds</script>
+    <!-- ================= FOOTER SECTION ================= -->
+    <footer class="footer-container">
+
+        <!-- Footer information arranged in a table -->
+        <table class="footer-links">
+            <tr>
+
+                <!-- Business hours -->
+                <td>
+                    <h3>Our Timings</h3>
+                    <ul>
+                        <li>Monday-Friday: From 8 Am to 5 Pm</li>
+                        <li>Saturday-Sunday: From 8 Am to 12 Pm</li>
+                    </ul>
+                </td>
+
+                <!-- Store locations -->
+                <td>
+                    <h3>Our locations</h3>
+                    <ul>
+                        <li>Kamal Pokhari, Kathmandu</li>
+                        <li>Old Baneshwor, Kathmandu</li>
+                    </ul>
+                </td>
+
+                <!-- Design references -->
+                <td>
+                    <h3>About our designs</h3>
+                    <ul>
+                        <li><a href="Assets/Html code/research.html">Websites</a></li>
+                    </ul>
+                </td>
+
+                <!-- Additional links -->
+                <td>
+                    <h3>LEARN MORE</h3>
+                    <ul>
+                        <li><a href="Assets/Html code/blog.html">Blog</a></li>
+                        <li><a href="Assets/Html code/aboutUs.html">About Us</a></li>
+                    </ul>
+                </td>
+
+                <!-- Contact information -->
+                <td>
+                    <h3>Questions?</h3>
+                    <p style="color: black;">Call us if you like to know about our products and services!</p>
+
+                    <!-- Social media and contact icons -->
+                    <table class="small-image-table">
+                        <td class="small-img-wrapper"><img src="Assets/Images/Insta.jpg" alt=""></td>
+                        <td class="small-img-wrapper"><img src="Assets/Images/email.jpg" alt=""></td>
+                        <td class="small-img-wrapper"><img src="Assets/Images/call.png" alt=""></td>
+                    </table>
+                </td>
+
+            </tr>
+        </table>
+
+        <!-- Copyright -->
+        <p style="color: rgb(7, 7, 7);"><b><i>&copy; All Rights Reserved To EARTH-BASKET</i></b></p>
+    </footer>
+    
+</body>
+
+</html>
