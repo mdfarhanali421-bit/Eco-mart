@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Defines character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Makes the page responsive on all devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title shown on browser tab -->
+    <title>Home Page</title>
+
+    <!-- Linking main stylesheet -->
+    <link rel="stylesheet" href="../CSS/style.css">
+
+</head>
+
+<style>
+    /* ================= GLOBAL RESET ================= */
+    /* Removes default margin and padding and applies consistent box sizing */
+    * {
+        margin: 0;
+        /* Removes default margin */
+        padding: 0;
+        /* Removes default padding */
+        box-sizing: border-box;
+        /* Includes padding and border in element size */
+    }
+
+    /* ================= BODY STYLING ================= */
+    /* Sets background color for the whole page */
+
+
+    /* ================= HEADER STYLING ================= */
+    /* Main header title styling */
+    .main-header h1 {
+        font-size: 3rem;
+        /* Large heading text */
+        font-weight: 300;
+        /* Light font weight */
+        margin-bottom: 40px;
+        /* Space below heading */
+    }
+
+    /* Bold text inside heading */
+    .bold-text {
+        font-weight: 900;
+        /* Extra bold text */
+        letter-spacing: -2px;
+        /* Tight letter spacing */
+    }
+
+    /* ================= LAYOUT ================= */
+    /* Creates a two-column layout using flex  */
+    .flex-container {
+        display: flex;
+        /* Enables flexbox */
+        gap: 30px;
+        /* Space between columns */
+        max-width: 1300px;
+        /* Limits layout width */
+        margin: auto;
+        /* Centers container */
+    }
+
+    /* Main content column */
+    .flex-container> :first-child {
+        flex: 1.5;
+        /* Matches 1.5fr column */
+    }
+
+    /* Sidebar / secondary column */
+    .flex-container> :last-child {
+        flex: 1;
+        /* Matches 1fr column */
+    }
+
+    /* ================= CARD STYLING ================= */
+    /* General article card layout */
+    article {
+        background: #fff;
+        /* White card background */
+        position: relative;
+        /* Enables positioned elements inside */
+        border: 1px solid #ddd;
+        /* Light border */
+        display: flex;
+        /* Uses flexbox */
+        flex-direction: column;
+        /* Vertical layout */
+    }
+
+    /* Tag label styling */
+    .tag {
+        background: #333;
+        /* Dark background */
+        color: #fff;
+        /* White text */
+        padding: 5px 15px;
+        /* Inner spacing */
+        font-family: monospace;
+        /* Monospace font style */
+        font-size: 0.8rem;
+        /* Small text size */
+        display: inline-block;
+        /* Fits content width */
+        width: fit-content;
+        /* Shrinks to text width */
+    }
+
+    /* ================= IMAGE STYLING ================= */
+    /* Image container */
+    .image-wrapper {
+        position: relative;
+        /* Allows absolute positioning inside */
+        overflow: hidden;
+        /* Hides overflow */
+        background: #eee;
+        /* Light gray background */
+    }
+
+    /* Image inside card */
+    .image-wrapper img {
+        width: 100%;
+        /* Full width image */
+        height: auto;
+        /* Maintains aspect ratio */
+        display: block;
+        /* Removes bottom gap */
+    }
+
+    /* Decorative yellow accent box */
+    .yellow-accent {
+        position: absolute;
+        /* Positioned inside image */
+        top: 20px;
+        right: 20px;
+        width: 60px;
+        height: 80px;
+        background-color: #ffd700;
+        /* Bright yellow color */
+    }
+
+    /* ================= CONTENT DETAILS ================= */
+    /* Card text content container */
+    .card-content {
+        padding: 30px;
+        /* Inner spacing */
+    }
+
+    /* Main card title */
+    h2 {
+        font-size: 1.8rem;
+        /* Title size */
+        margin-bottom: 15px;
+        /* Space below title */
+    }
+
+    /* Subheading style */
+    h3 {
+        font-size: 1.2rem;
+        /* Subheading size */
+        margin-bottom: 10px;
+        /* Space below */
+    }
+
+    /* Meta information (date, author, etc.) */
+    .meta {
+        font-size: 0.85rem;
+        /* Smaller text */
+        color: #888;
+        /* Gray text */
+        margin-bottom: 20px;
+        /* Space below meta */
+    }
+
+    /* Short description text */
+    .excerpt {
+        line-height: 1.6;
+        /* Improves readability */
+        color: #555;
+        /* Medium gray text */
+    }
+
+    /* ================= TRENDING COLUMN ================= */
+    /* Sidebar column layout */
+    .trending-column {
+        display: flex;
+        /* Uses flexbox */
+        flex-direction: column;
+        /* Vertical stacking */
+        gap: 30px;
+        /* Space between cards */
+    }
+
+    /* Smaller padding for trending cards */
+    .trending-card .card-content {
+        padding: 20px;
+    }
+
+    /* Featured card size adjustment */
+    .featured-card {
+        height: fit-content;
+        /* Adjusts height based on content */
+    }
+
+    /* ================= CARD STYLING ================= */
+    /* General article card layout */
+    .subfeatured-card {
+        background: #fff;
+        /* White card background */
+        position: relative;
+        /* Enables positioned elements inside */
+        border: 1px solid #ddd;
+        /* Light border */
+    }
+
+    /* Sub image wrapper */
+    .subimage-wrapper {
+        display: flex;
+        width: 100%;
+        /* Full width image */
+        height: auto;
+        /* Maintains aspect ratio */
+        border-radius: 20px;
+        /* Rounded rectangular corners */
+        border: 1px solid #ddd;
+        /* Subtle border for definition */
+        padding: 100px;
+        gap: 20px;
+        align-items: center;
+    }
+</style>
+
+<body>
+
+    <!-- Inline CSS specifically for the hero section background -->
+    <style>
+        .hero-section {
+            height: 100vh; /* Full screen height */
+            background-image: url(../Images/BlogHero.png);
+            background-repeat: no-repeat;
+            background-size: cover; /* Ensures image covers the section */
+            position: relative;
+        }
+    </style>
+
+    <!-- ================= Header Section ================= -->
+    <header>
+
+        <!-- Top bar containing logo, brand name, and shop link -->
+        <div class="top-bar">
+
+            <!-- Logo container -->
+            <div class="brand-container">
+                <img src="../Images/EcoMartLogo.png" alt="Eco Mart Logo" class="logo-img">
+            </div>
+
+            <!-- Website name with link to home page -->
+            <h1 class="brand-name">
+                <a href="../../homePage.html" style="color: rgb(33, 120, 74);">EARTH BASKET</a>
+            </h1>
+
+            <!-- Shop link aligned to the right -->
+            <div class="top-nav-link">
+                <a href="ourProducts.html" style="color: rgb(33, 120, 74);">SHOP</a>
+            </div>
+        </div>
+
+        <!-- Main navigation menu -->
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../../homePage.html"><b><i>Home</i></b></a></li>
+                <li><a href="ourProducts.html"><b><i>Products</i></b></a></li>
+                <li><a href="blog.html" class="active"><b><i>Blog</i></b></a></li>
+                <li><a href="research.html"><b><i>Research</i></b></a></li>
+                <li><a href="aboutUs.html"><b><i>About us</i></b></a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- ================= Hero Section ================= -->
+    <!-- Visual banner image for the blog page -->
+    <section class="hero-section"></section>
+
+    <!-- ================= Blog Page Content ================= -->
+    <div class="blog-page" style="padding: 40px;">
+
+        <!-- Blog page heading -->
+        <header class="main-header">
+            <h1><span class="bold-text">Today's Focus</span> Technology</h1>
+        </header>
+
+        <!-- flex container for main article and sidebar -->
+        <div class="flex-container">
+
+            <!-- Featured main blog article -->
+            <article class="featured-card">
+
+                <!-- Tag label -->
+                <div class="tag">//.featured_blog</div>
+
+                <!-- Blog image -->
+                <div class="image-wrapper">
+                    <img src="../Images/Technology.webp" alt="">
+                </div>
+
+                <!-- Blog text content -->
+                <div class="card-content">
+                    <h2>About Technology</h2>
+                    <p class="excerpt">
+                        <!-- Main article text -->
+                        Technology serves as an indispensable tool that profoundly shapes their
+                        educational journey and future careers. It
+                        provides access to a wealth of online resources, digital libraries, and e-books, allowing for
+                        research and expanded
+                        knowledge that was unimaginable in previous decades. Online learning platforms and virtual
+                        classrooms offer flexibility,
+                        enabling students to learn at their own pace, collaborate with peers and instructors globally,
+                        and balance their studies
+                        with other life commitments. Tools like Google's product suite, specialized educational apps,
+                        and learning management
+                        systems streamline tasks, enhance productivity, and make learning more interactive and engaging
+                        through quizzes, videos,
+                        and virtual simulations.
+                        However, this pervasive use of technology also presents challenges, including the potential for
+                        distraction from
+                        non-academic content like social media, reduced physical activity, and issues with mental health
+                        if not balanced with
+                        real-world interactions. A critical issue is the "digital divide," where unequal access to
+                        reliable internet and devices
+                        can create disparities in learning opportunities for students from different socioeconomic
+                        backgrounds. Furthermore, an
+                        over-reliance on technology may hinder the development of critical thinking and problem-solving
+                        skills if students turn
+                        to instant online answers rather than independent reasoning. Ultimately, the value of technology
+                        in a bachelor's
+                        education depends on its mindful and responsible application to enhance learning and prepare for
+                        the demands of a
+                        digitally-driven world, rather than becoming a source of dependency or distraction.
+                    </p>
+                </div>
+            </article>
+
+            <!-- ================= Sidebar Section ================= -->
+            <aside class="trending-column">
+
+                <!-- Trending article: Positive impact -->
+                <article class="trending-card">
+
+                    <div class="tag">//. Sub</div>
+
+                    <div class="trending-layout">
+                        <div class="image-wrapper small">
+                            <img src="article-1.jpg" alt="">
+                        </div>
+
+                        <div class="card-content">
+                            <h3>Positive Impact of technology</h3>
+                            <p class="excerpt">
+                            Technology has a profoundly positive impact on students such as: <br>1.
+                            transforming the educational landscape into a more dynamic, accessible, and personalized
+                            experience. <br>2.Digital tools provide students with instant access to a vast array of
+                            online resources, including e-books which broadens their knowledge far beyond
+                            traditional textbooks.
+                            <br>3.Technology enhances student engagement and motivation through interactive
+                            platforms, multimedia content, and educational simulations that cater to diverse
+                            learning styles. <br>4.Online learning platforms and communication tools facilitate
+                            seamless collaboration on group projects and allow for real-time interaction with peers
+                            and instructors regardless of physical location.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Trending article: Negative impact -->
+                <article class="trending-card">
+
+                    <div class="tag">//.Sub</div>
+
+                    <div class="trending-layout">
+                        <div class="image-wrapper small">
+                            <img src="article-2.jpg" alt="">
+                        </div>
+
+                        <div class="card-content">
+                            <h3>Negative impact of Technology</h3>
+                            <p class="excerpt">
+                                While technology offers numerous educational advantages, its misuse and
+                                overuse can have significant negative impacts such as:
+                                <br>1. Affecting their academic performance, health, and social skills. The constant
+                                connectivity and influx
+                                of notifications from smartphones and laptops in learning environments can lead to
+                                distractions and decreased attention
+                                spans. <br>
+                                2. Superficial online sources may also hinder the development of critical thinking and
+                                independent
+                                problem-solving skills, as students may be less inclined to engage in analytical
+                                thinking or original work.
+                                <br>3. Prolonged screen time associated with technology use contributes to several
+                                health issues.
+                                <br> 4.Physical health concerns include digital eye strain, headaches, poor posture, and
+                                a lack of physical activity, which can lead to
+                                a more sedentary lifestyle and increased risk of obesity. Mental well-being is also at
+                                risk.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+            </aside>
+        </div>
+    </div>
+
+    <!-- ================= Second Blog Content Section ================= -->
+    
+
+    <article class="subfeatured-card">
+
+        <div class="tag">//.featured_blog</div>
+
+            <!-- Environmental image -->
+            <div class="subimage-wrapper">
+                <img src="../Images/Environment.jpeg" alt="" style="height: 600px;">
+                <img src="../Images/tea.jpeg" alt="" style="height: 600px;">
+                <img src="../Images/sustainable.jpg" alt="" style="height: 600px;">
+            </div>
+
+            <!-- Detailed sustainability content -->
+            <div class="card-content">
+                <h2>How Technology Boosts Sustainable Product Sale</h2>
+                <p class="excerpt">
+                    <!-- Sustainability-related explanations, tips, interviews, and news -->
+                    Sustainable technology refers to an invention that promotes social and economic progress while
+                    taking into consideration
+                    natural resources. These technologies seek to offer sustainable products while significantly
+                    lowering environmental
+                    risks. <br><br>
+                    <h2>1. Why choose sustainable Products</h2>
+                    <p class="excerpt">Sustainable products are those that have been designed, manufactured, and distributed with minimal
+                        negative impact on
+                        the environment and society.One key aspect of sustainable products is their life cycle analysis.
+                        Sustainable products are designed to have a long
+                        lifespan and be recyclable or biodegradable at the end of their life cycle.</p><br>
+                    <h2>2. Sustainable Living tips and tricks</h2>
+                    <p class="excerpt">While beginning your eco-friendly journey may feel like a big undertaking, starting with small,
+                        manageable changes is
+                        the key to adopting eco-friendly habits such as:
+                        1.Eliminate single-use plastic
+                        2.Recycle and repurpose
+                        3.Buy second-hand and shop sustainable brands
+                        4.Embrace conscious consumerism by choosing natural fibers
+                        5.Use bamboo products </p><br>
+                    <h2>3. Interviews with Sustainable brands and experts</h2>
+                    <p class="excerpt">During the interviews, they say Companies need to be honest in sharing their environmental
+                        initiatives. It is important to provide information on
+                        eco-friendly programs, supply chains, and product sources to contribute to trustworthiness.Consumers
+                        can benefit from brands by the use of circular economy techniques including recycling, reusing, and
+                        cutting
+                        waste. Highlighting sustainability can enhance a product's lifecycle.One of the easiest ways for
+                        brands to demonstrate their commitment to sustainability is through eco-friendly packaging.
+                        Making the switch to recyclable, biodegradable, or reusable packaging can cut waste and enhance
+                        brand perception.</p><br>
+                    <h2>4. News & Updates on environment issues</h2>
+                    <p class="excerpt">Undoubtedly among the biggest environmental problems of our lifetime is the rise in greenhouse gas
+                        emissions, which trap
+                        heat the sun's heat in the atmosphere, raising Earth's surface temperature and leading to longer and
+                        hotter heatwaves.
+                        Atmospheric concentrations of all three major planet-warming gases carbon dioxide (CO2), methane,
+                        and nitrous oxide
+                        have never been so high.
+                    </p><br>
+                    <h2>5. Community Stories & Sucess</h2>
+                    <p class="excerpt"><b>i. A Community Garden Movement in the Heart of the City</b>  <br>
+                        In the bustling urban landscape of Los Angeles, community gardens have emerged as green oases that
+                        not only beautify
+                        neighborhoods but also foster community spirit. Residents in underserved areas have come together to
+                        transform vacant
+                        lots into vibrant gardens. These communal spaces serve as both a source of fresh produce and a
+                        gathering place for local
+                        families. The initiative began with a small group of neighbors who wanted to combat food deserts in
+                        their area. As word
+                        spread, more families joined, each bringing their own unique gardening skills and cultural
+                        traditions. <br><br>
+                        <b>ii. Renewable Energy Projects Lighting Up Rural Areas</b> <br>
+                    
+                        In rural Appalachia, many communities face the dual challenges of energy poverty and environmental
+                        degradation. However,
+                        a wave of renewable energy projects is transforming the landscape. These initiatives, largely driven
+                        by local
+                        organizations, have focused on harnessing the abundant natural resources in the area, from wind to
+                        solar energy. For
+                        instance, a community-driven solar farm was established, allowing locals to invest in and benefit
+                        directly from the
+                        energy produced.
+                    </p>
+                </p>
+            </div>
+        </div>
+        <!-- Detailed sustainability content -->
+        
+        
+        <article class="subfeatured-card">
+            <div class="tag">//.Conclusion</div>
+            <div class="card-content">
+                <h2>Conclusion</h2>
+                <p class="excerpt">Our Website has fully supported the idea of sustainable development by stepping forward to 
+                    sell eco-friendly products at very reasonable price. In this page of our website we have shared the importance and 
+                    consequences of technologies. Along with that we have also shared details about how Technology Boosts Sustainable Product Sales,
+                    Why Choose Sustainable Products?,Sustainable Living Tips & Tricks,Interviews with Sustainable Brands & Experts,News & Updates on Environmental Issues,
+                    Community Stories & Successes.
+                </p>
+            </div> 
+        </article>
+    </article>
+    
+
+    <!-- ================= Footer Section ================= -->
+    <footer class="footer-container">
+
+        <!-- Footer information arranged using a table -->
+        <table class="footer-links">
+            <tr>
+
+                <!-- Business timings -->
+                <td>
+                    <h3>Our Timings</h3>
+                    <ul>
+                        <li>Monday-Friday: From 8 Am to 5 Pm</li>
+                        <li>Saturday-Sunday: From 8 Am to 12 Pm</li>
+                    </ul>
+                </td>
+
+                <!-- Store locations -->
+                <td>
+                    <h3>Our locations</h3>
+                    <ul>
+                        <li>Kamal Pokhari, Kathmandu</li>
+                        <li>Old Baneshwor, Kathmandu</li>
+                    </ul>
+                </td>
+
+                <!-- Research page link -->
+                <td>
+                    <h3>About our designs</h3>
+                    <ul>
+                        <li><a href="research.html">Websites</a></li>
+                    </ul>
+                </td>
+
+                <!-- Additional navigation links -->
+                <td>
+                    <h3>LEARN MORE</h3>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="aboutUs.html">About Us</a></li>
+                    </ul>
+                </td>
+
+                <!-- Contact and social icons -->
+                <td>
+                    <h3>Questions?</h3>
+                    <p style="color: rgb(7, 7, 7);">
+                        Call us if you like to know about our products and services!
+                    </p>
+
+                    <!-- Social/contact icons -->
+                    <table class="small-image-table">
+                        <td class="small-img-wrapper"><img src="../Images/Insta.jpg" alt=""></td>
+                        <td class="small-img-wrapper"><img src="../Images/email.jpg" alt=""></td>
+                        <td class="small-img-wrapper"><img src="../Images/call.png" alt=""></td>
+                    </table>
+                </td>
+
+            </tr>
+        </table>
+
+        <!-- Copyright notice -->
+        <p style="color: rgb(7, 7, 7);">
+            <b><i>&copy; All Rights Reserved To EARTH-BASKET</i></b>
+        </p>
+
+    </footer>
+
+</body>
+</html>

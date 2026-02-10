@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character encoding for correct text rendering -->
+    <meta charset="UTF-8">
+
+    <!-- Page title displayed on browser tab -->
+    <title>Profile | Team Leader</title>
+
+    <!-- Makes the page responsive on all devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        /* Global reset to remove default spacing and ensure consistency */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Background color of the entire page */
+        body {
+            background: #f4f6f8;
+        }
+
+        /* Main profile card container */
+        .profile-container {
+            max-width: 700px;
+            background-image: radial-gradient(circle farthest-corner at 10% 20%,
+                    rgba(122, 186, 73, 1) 18.2%,
+                    rgba(0, 124, 187, 1) 78.1%);
+            margin: 40px auto;
+            /* Centers the container */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header section alignment */
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Profile image styling (optional) */
+        .header img {
+            width: 140px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Common spacing for all sections */
+        .section {
+            margin-top: 20px;
+        }
+
+        /* Section heading style */
+        .section h3 {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            color: #f2eeee;
+        }
+
+        /* Paragraph and list text styling */
+        .section p,
+        li {
+            font-size: 14px;
+            color: #f6f3f3;
+            margin-bottom: 6px;
+        }
+
+        /* Back navigation button */
+        .back {
+            display: inline-block;
+            margin-top: 20px;
+            background: #6b1071;
+            color: white;
+            padding: 10px 18px;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Main profile container -->
+    <div class="profile-container">
+
+        <!-- Header containing name and contact information -->
+        <div class="header">
+            <!-- Dynamic name fetched from URL parameter -->
+            <h2 id="name"></h2>
+
+            <!-- Static full name -->
+            <h2>MD FARHAN ALI</h2>
+
+            <!-- Contact details -->
+            <p><strong>Contact</strong></p>
+            <p>Janakpur Dham, Nepal</p>
+            <p>📞 +977 9800856183</p>
+            <p>mdfarhanali421@gmail.com</p>
+        </div>
+
+        <!-- Professional summary section -->
+        <div class="section">
+            <h3>Professional Summary</h3>
+            <p>
+                Motivated and detail-oriented student with experience in sports teaching and travel management.
+                Skilled in software tools such as Excel, Word, Visual Studio Code, Java, and Python.
+                Strong communicator with the ability to manage tasks efficiently.
+            </p>
+        </div>
+
+        <!-- Technical skills section -->
+        <div class="section">
+            <h3>Technical Skills</h3>
+            <ul>
+                <li>
+                    <strong>Software Tools:</strong>
+                    Excel, Word, PowerPoint, Visual Studio Code, Power BI,
+                    Java, Python, JavaScript
+                </li>
+            </ul>
+        </div>
+
+        <!-- Education details section -->
+        <div class="section">
+            <h3>Educational Qualifications</h3>
+
+            <p><strong>BSc (Hons) Computing with Artificial Intelligence</strong></p>
+            <p>Islington College | 2025 – 20XX</p>
+            <ul>
+                <li>Relevant Courses: Programming, Mathematics, Robotics, AI</li>
+            </ul>
+
+            <p><strong>High-Level Education</strong></p>
+            <p>Mithila Institute of Technology (MIT) | 2022 – 2024</p>
+
+            <p><strong>Secondary Education (Class 1–10)</strong></p>
+            <p>New Vision Residential Secondary School | 2013 – 2023</p>
+            <ul>
+                <li>Completed SEE (Secondary Education Examination)</li>
+            </ul>
+        </div>
+
+        <!-- Work experience section -->
+        <div class="section">
+            <h3>Experience</h3>
+
+            <p><strong>Temporary Sports Teacher</strong></p>
+            <p>New Vision Residential School, Janakpur Dham | 2021 – 2023</p>
+            <ul>
+                <li>Organized and conducted sports activities</li>
+                <li>Guided students during extracurricular sessions</li>
+            </ul>
+
+            <p><strong>Assistant – Tours and Travel</strong></p>
+            <p>Jan – Jul 2025</p>
+            <ul>
+                <li>Assisted in planning and managing travel packages</li>
+                <li>Worked as tour operator, guide, and customer support</li>
+                <li>Coordinated logistics and ensured client satisfaction</li>
+            </ul>
+        </div>
+
+        <!-- Back navigation link -->
+        <a href="aboutUs.html" class="back">← Go Back</a>
+
+    </div>
+
+    <script>
+        // Read URL parameters (example: ?name=John)
+        const params = new URLSearchParams(window.location.search);
+
+        // Insert the name value into the heading
+        document.getElementById("name").innerText = params.get("name");
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Character encoding for proper text display -->
+    <meta charset="UTF-8">
+
+    <!-- Title shown on browser tab -->
+    <title>Profile | Member</title>
+
+    <!-- Ensures responsive layout on mobile and desktop -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        /* Reset default browser styles and apply global font */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Page background color */
+        body {
+            background: #f4f6f8;
+        }
+
+        /* Main profile card container */
+        .profile-container {
+            max-width: 700px;
+            background-image: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header section alignment */
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Profile image styling (if added later) */
+        .header img {
+            width: 140px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Common section spacing */
+        .section {
+            margin-top: 20px;
+        }
+
+        /* Section heading styling */
+        .section h3 {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            color: #f2eeee;
+        }
+
+        /* Text styling for paragraphs and list items */
+        .section p,
+        li {
+            font-size: 14px;
+            color: #f6f3f3;
+            margin-bottom: 6px;
+        }
+
+        /* Back button styling */
+        .back {
+            display: inline-block;
+            margin-top: 20px;
+            background: #dc0b0b;
+            color: white;
+            padding: 10px 18px;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Main profile container -->
+<div class="profile-container">
+
+    <!-- Header section with name and contact details -->
+    <div class="header">
+        <!-- Name dynamically loaded from URL parameter -->
+        <h2 id="name"></h2>
+
+        <!-- Static display name -->
+        <h2>SHREYAS SHRESTHA</h2>
+
+        <!-- Contact information -->
+        <p><strong>Contact</strong></p>
+        <p>Kathmandu, Nepal</p>
+        <p>📞 +977 9808026947</p>
+        <p>shreyasshr2016@gmail.com</p>
+    </div>
+
+    <!-- Professional summary section -->
+    <div class="section">
+        <h3>Professional Summary</h3>
+        <p>
+            Motivated Software and Artificial Intelligence (SAI) student at Islington College
+            with a strong foundation in programming, problem-solving, and emerging AI technologies.
+            Passionate about developing efficient software solutions and applying artificial
+            intelligence concepts to real-world challenges.
+        </p>
+    </div>
+
+    <!-- Work experience section -->
+    <div class="section">
+        <h3>Work Experience</h3>
+
+        <p><strong>IT Support Intern (Student Role)</strong></p>
+        <p><strong>ABC Tech Solution | Kathmandu, Nepal</strong></p>
+        <p><strong>Jun 2024 – August 2024</strong></p>
+
+        <!-- Responsibilities list -->
+        <ul>
+            <li>Assisted in troubleshooting basic hardware, software, and network-related issues.</li>
+            <li>Provided support for system setup, software installation, and routine maintenance.</li>
+            <li>Helped manage data entry, documentation, and version control for internal projects.</li>
+            <li>Collaborated with senior developers and IT staff to understand system workflows.</li>
+            <li>Gained hands-on experience with operating systems, networking, and customer support.</li>
+        </ul>
+    </div>
+
+    <!-- Academic history section -->
+    <div class="section">
+        <h3>Academic History</h3>
+
+        <p><strong>Rosebud School</strong></p>
+        <p>Completed education from Class 1 to 10 and appeared in SEE examination.</p>
+
+        <p><strong>United Academy</strong></p>
+        <p>Studied Computer Science and appeared in NEB (+2) board examination.</p>
+
+        <p><strong>Islington College</strong></p>
+        <p>
+            Studying courses in computer programming, mathematics, robotics, and AI
+            affiliated with London Metropolitan University.
+        </p>
+    </div>
+
+    <!-- Navigation back to About Us page -->
+    <a href="aboutUs.html" class="back">← Go Back</a>
+
+</div>
+
+<script>
+    // Extract URL parameters (e.g., ?name=Alex)
+    const params = new URLSearchParams(window.location.search);
+
+    // Display the name parameter inside the heading
+    document.getElementById("name").innerText = params.get("name");
+</script>
+
+</body>
+</html>
+    
